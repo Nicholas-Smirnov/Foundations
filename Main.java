@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 import Society.*;
 
 public class Main {
@@ -13,6 +15,7 @@ public class Main {
         // 
         System.out.println(firstMan.getChildren());
         */
+
 
     }
 

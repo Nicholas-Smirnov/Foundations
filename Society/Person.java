@@ -78,8 +78,8 @@ public class Person {
     // ToString Method
     public String toString() {
         String allStats = "";
-        allStats += String.format("%s : Age = %s, Gender = %s \n", name, age, gender);
-        if (partner == null) {
+        allStats += String.format("%s : Age = %s, Gender = %s ", name, age, gender);
+        if (partner == null || age < 18) {
             int grade = age - 5;
             String output;
             if (grade < 3) {
@@ -88,7 +88,10 @@ public class Person {
                 allStats += String.format("Estate = %s, Grade = %s", estate, Integer.toString(grade));
         }   
         else {
-            allStats += String.format("Estate = %s, Partner = %s", estate, partner.getName());
+            if (age >= 18) {
+                allStats += String.format("Estate = %s, Currently Single", estate);
+            } else 
+                allStats += String.format("Estate = %s, Partner = %s", estate, partner.getName());
         } 
         
         return allStats;
